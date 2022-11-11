@@ -8,10 +8,12 @@
   "dependencies": {
     "@react-three/drei": "^9.40.0",
     "@react-three/fiber": "^8.9.1",
+    "lamina": "^1.1.23",
     "next": "latest",
     "next-transpile-modules": "^10.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-modal": "^3.16.1",
     "three": "^0.146.0"
   },
   "devDependencies": {

@@ -18,7 +18,7 @@ import arrowUp from './arrow-up.svg';
 import discount from './Discount.svg';
 import facebook from './facebook.svg';
 import instagram from './instagram.svg';
-import linkedin from './linkedin.svg';
+import discord from './discord.svg';
 import twitter from './twitter.svg';
 
 export {
@@ -42,6 +42,6 @@ export {
   discount,
   facebook,
   instagram,
-  linkedin,
+  discord,
   twitter,
 };
