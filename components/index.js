@@ -11,7 +11,6 @@ import Background from './Background';
 
 //3D object
 import HouseNight from './HouseNight';
-import HouseDay from './HouseDay';
 import Scooter from './Scooter';
 import Saturn from './Saturn';
 import Mailbox from './Mailbox';
@@ -27,7 +26,6 @@ export {
   Camera,
   Background,
   HouseNight,
-  HouseDay,
   Scooter,
   Saturn,
   Cat,

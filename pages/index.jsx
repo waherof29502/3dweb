@@ -12,7 +12,6 @@ import {
   Camera,
   Background,
   HouseNight,
-  HouseDay,
   Saturn,
   Scooter,
   Cat,
@@ -28,8 +27,8 @@ const Home = () => {
   //   setInterval(() => {
   //     const date = new Date();
   //     setClockState(date?.getHours());
-  //     console.log('clock', date);
-  //   }, 1000);
+  // console.log('clock', date);
+  //   }, 10000);
   // }, []);
 
   return (
@@ -52,11 +51,10 @@ const Home = () => {
               {testing ? <gridHelper args={[10, 10]} /> : null}
               <Lights />
               {/* {clockState < 18 ? <Lights /> : null} */}
-              {/* {clockState > 18 ? <HouseDay /> : <HouseNight />} */}
               <HouseNight />
               <Saturn />
               <Cat />
-              {/* <Mailbox /> */}
+              <Mailbox />
               {/* <Human /> */}
               {/* <Scooter /> */}
               <Grounds />
