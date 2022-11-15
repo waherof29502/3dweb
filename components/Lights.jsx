@@ -11,11 +11,11 @@ const Lights = () => {
 
   const spotlightRef = useRef(null);
   useHelper(spotlightRef, SpotLightHelper, 150, 'red');
-  const { distance, intensity, angle, color } = useControls({
-    distance: { value: 5, min: 500, max: 12000 },
-    intensity: { value: 1, min: 0.1, max: 10 },
-    angle: { value: Math.PI / 6, min: 0.01, max: 1 },
-  });
+  // const { distance, intensity, angle, color } = useControls({
+  //   distance: { value: 5, min: 500, max: 12000 },
+  //   intensity: { value: 1, min: 0.1, max: 10 },
+  //   angle: { value: Math.PI / 6, min: 0.01, max: 1 },
+  // });
   // const rectAreaLightRef = useRef(null);
   // useHelper(rectAreaLightRef, RectAreaLightHelper, 'red');
 
@@ -58,7 +58,7 @@ const Lights = () => {
 
       <spotLight
         // args={['#5776ff', 1.8, 5500,angleToRadians(40), 0.2]}
-        args={['#b450b0', 1.2, 280, angleToRadians(40)]}
+        args={['#b450b0', 1.2, 280, angleToRadians(20)]}
         position={[130, 150, 0]}
         castShadow
       />

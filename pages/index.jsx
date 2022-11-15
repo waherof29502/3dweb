@@ -4,7 +4,7 @@ import Image from 'next/image';
 import styles from '../styles/styles';
 import { Canvas } from '@react-three/fiber';
 import { Stats } from '@react-three/drei';
-
+import { EffectComposer, GodRays } from '@react-three/postprocessing';
 import {
   Navbar,
   Lights,
@@ -51,10 +51,12 @@ const Home = () => {
               {testing ? <gridHelper args={[10, 10]} /> : null}
               <Lights />
               {/* {clockState < 18 ? <Lights /> : null} */}
+
               <HouseNight />
               <Saturn />
               <Cat />
               <Mailbox />
+
               {/* <Human /> */}
               {/* <Scooter /> */}
               <Grounds />

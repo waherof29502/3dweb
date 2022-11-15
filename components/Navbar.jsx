@@ -1,25 +1,26 @@
 import React, { useState } from 'react';
-import { logo, close, menu, airbnb } from '../assets';
+import { close, menu, sandpock } from '../assets';
 import Image from 'next/image';
 import { navLinks } from '../constants';
 import Link from 'next/link';
 import Modal from 'react-modal';
 import MemberModal from './MemberModal';
+import Selector from './Selector';
 
 Modal.setAppElement('#__next');
 const customStyles = {
   content: {
-    top: '50%',
+    top: '60%',
     left: '50%',
     right: 'auto',
     bottom: 'auto',
     transform: 'translate(-50%, -50%)',
-    backgroundColor: '#a44545',
+    background: 'transparent',
     padding: 0,
     border: 'none',
   },
   overlay: {
-    backgroundColor: '#8f174b7e',
+    backgroundColor: '#4040403a',
   },
 };
 const Navbar = () => {
@@ -29,7 +30,7 @@ const Navbar = () => {
     <nav className='w-full flex py-10 justify-between items-center navbar z-10'>
       {/* Logo */}
       <Image
-        src={airbnb}
+        src={sandpock}
         alt='samoi'
         className='w-[124px] h-[32px] object-contain'
       />
@@ -46,9 +47,10 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-      <button className='bg-secondary text-white py-2 px-4 rounded-full mr-6 sm:flex hidden'>
+      {/* <button className='bg-primary text-white py-2 px-4 rounded-full mr-6 sm:flex hidden'>
         English
-      </button>
+      </button> */}
+      <Selector />
       {/* <div className='lg:relative bg-white right-0 rounded-md p-2 px-10'>
         <li>
           <button>English</button>
@@ -57,7 +59,7 @@ const Navbar = () => {
 
       {/* Popup Button */}
       <button
-        className='bg-secondary text-white py-2 px-4 rounded-full sm:flex hidden'
+        className='bg-primary text-white py-2 px-4 rounded-full sm:flex hidden'
         onClick={() => setIsOpen(true)}
       >
         PopupModal

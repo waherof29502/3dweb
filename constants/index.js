@@ -38,6 +38,20 @@ export const navLinks = [
     title: 'Map',
   },
 ];
+export const languages = [
+  {
+    id: 'english',
+    title: 'ENG',
+  },
+  {
+    id: 'traditional-chinese',
+    title: '中文',
+  },
+  {
+    id: 'simplified-chinese',
+    title: '简体',
+  },
+];
 
 export const socialMedia = [
   {

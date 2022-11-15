@@ -20,6 +20,7 @@ import facebook from './facebook.svg';
 import instagram from './instagram.svg';
 import discord from './discord.svg';
 import twitter from './twitter.svg';
+import sandpock from './sandpock.svg';
 
 export {
   airbnb,
@@ -44,4 +45,5 @@ export {
   instagram,
   discord,
   twitter,
+  sandpock,
 };
