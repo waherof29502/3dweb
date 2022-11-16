@@ -27,24 +27,3 @@ const Ground = () => {
 };
 
 export default Ground;
-
-// import { useLoader } from '@react-three/fiber';
-// import React, { useState, useEffect } from 'react';
-// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-
-// const Ground = () => {
-//   const model = useLoader(GLTFLoader, './models/floor.glb');
-//   // model.scene.scale.set(0.5, 0.5, 0.5);
-//   model.scene.traverse((object) => {
-//     if (object.isMesh) {
-//       object.castShadow = true;
-//     }
-//   });
-//   return (
-//     <object3D position={[0, 0, -60]}>
-//       <primitive object={model.scene} />
-//     </object3D>
-//   );
-// };
-
-// export default Ground;

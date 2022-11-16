@@ -14,7 +14,7 @@ const HouseNight = () => {
   return (
     <>
       {/* <ambientLight args={['#ffffff33', 0.5]} /> */}
-      <hemisphereLight args={['#ff676728', '#aa82ff88', 0.11]} />
+      <hemisphereLight args={['#ff676728', '#aa82ff88', 0.05]} />
 
       <object3D position={[0, -40, 0]}>
         <primitive object={model.scene} />

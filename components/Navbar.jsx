@@ -34,7 +34,7 @@ const Navbar = () => {
         alt='samoi'
         className='w-[124px] h-[32px] object-contain'
       />
-      {/* Nav Items */}
+      {/* Desktop Nav Items */}
       <ul className='list-none sm:flex hidden justify-start px-8 items-center flex-1'>
         {navLinks.map((nav, index) => (
           <li
@@ -47,22 +47,14 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-      {/* <button className='bg-primary text-white py-2 px-4 rounded-full mr-6 sm:flex hidden'>
-        English
-      </button> */}
+      {/* Selected Button */}
       <Selector />
-      {/* <div className='lg:relative bg-white right-0 rounded-md p-2 px-10'>
-        <li>
-          <button>English</button>
-        </li>
-      </div> */}
-
       {/* Popup Button */}
       <button
         className='bg-primary text-white py-2 px-4 rounded-full sm:flex hidden'
         onClick={() => setIsOpen(true)}
       >
-        PopupModal
+        LOGIN
       </button>
 
       <Modal
@@ -72,7 +64,7 @@ const Navbar = () => {
       >
         <MemberModal />
       </Modal>
-
+      {/* Mobile Nav Items */}
       <div className='sm:hidden flex flex-1 justify-end items-center'>
         <Image
           src={toggle ? close : menu}

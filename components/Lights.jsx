@@ -11,11 +11,11 @@ const Lights = () => {
 
   const spotlightRef = useRef(null);
   useHelper(spotlightRef, SpotLightHelper, 150, 'red');
-  // const { distance, intensity, angle, color } = useControls({
-  //   distance: { value: 5, min: 500, max: 12000 },
-  //   intensity: { value: 1, min: 0.1, max: 10 },
-  //   angle: { value: Math.PI / 6, min: 0.01, max: 1 },
-  // });
+  const { distance, intensity, angle, color } = useControls({
+    distance: { value: 5, min: 500, max: 12000 },
+    intensity: { value: 1, min: 0.1, max: 10 },
+    angle: { value: Math.PI / 6, min: 0.01, max: 1 },
+  });
   // const rectAreaLightRef = useRef(null);
   // useHelper(rectAreaLightRef, RectAreaLightHelper, 'red');
 
@@ -56,26 +56,32 @@ const Lights = () => {
         castShadow
       />
 
-      <spotLight
+      {/* <spotLight
         // args={['#5776ff', 1.8, 5500,angleToRadians(40), 0.2]}
         args={['#b450b0', 1.2, 280, angleToRadians(20)]}
         position={[130, 150, 0]}
         castShadow
+      /> */}
+      {/* outdoors lights */}
+      <spotLight
+        args={['#5061ad', 3.8, 2400, angleToRadians(10), 0.2]}
+        position={[-100, 120, 0]}
+        castShadow
       />
-      {/* old light version */}
-      {/* <spotLight
-        args={['#5776ff', 1.1, 3500, angleToRadians(40), 0.2]}
-        position={[300, 600, 500]}
+      <spotLight
+        args={['#8ee1ff', 0.13, 3500, angleToRadians(10), 0.2]}
+        position={[0, -200, 0]}
         castShadow
-      /> */}
-      {/* <spotLight
-        args={['#c4a2ff', 1.6, 5500, angleToRadians(10), 0.2]}
-        position={[-570, 170, -170]}
+      />
+
+      <spotLight
+        args={['#ffa2ad', 1.3, 3500, angleToRadians(10), 0.9]}
+        position={[120, 100, 0]}
         castShadow
-      /> */}
+      />
       {/* inner building light */}
       <spotLight
-        args={['#fff1d8', 0.3, 2800, angleToRadians(10), 0.5]}
+        args={['#f6c776', 0.2, 2800, angleToRadians(10), 1.5]}
         position={[30, 170, 10]}
         castShadow
       />

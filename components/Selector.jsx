@@ -13,7 +13,7 @@ const Selector = () => {
         {languages.map((language, i) => (
           <li
             key={language.id}
-            className='p-2 px-9 text-sm hover:bg-primary hover:text-white rounded-lg'
+            className='p-2 px-9 text-sm  hover:text-secondary rounded-lg'
             onClick={() => setCurrentLanguage(language.title)}
           >
             {language.title}
