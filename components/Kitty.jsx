@@ -3,11 +3,11 @@ import React, { useState, useEffect } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useAnimations } from '@react-three/drei';
 
-const Scooter = () => {
-  const model = useLoader(GLTFLoader, './models/scooter.glb');
+const Kitty = () => {
+  const model = useLoader(GLTFLoader, './models/kitty02.glb');
   const { actions } = useAnimations(model.animations, model.scene);
 
-  console.log('Scooter', model);
+  console.log('Kitty', model);
   // model.scene.scale.set(0.35, 0.35, 0.35);
   model.scene.traverse((object) => {
     if (object.isMesh) {
@@ -15,18 +15,15 @@ const Scooter = () => {
     }
   });
   useEffect(() => {
-    actions?.move011?.play();
-    actions?.move012?.play();
-    actions?.move013?.play();
-    actions?.move014?.play();
+    actions?.Action?.play();
   }, []);
   return (
     <>
-      <object3D position={[10, -40, 25]}>
+      <object3D position={[0, -40, 0]}>
         <primitive object={model.scene} />
       </object3D>
     </>
   );
 };
 
-export default Scooter;
+export default Kitty;

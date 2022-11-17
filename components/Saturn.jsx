@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 const Saturn = () => {
-  const model = useLoader(GLTFLoader, './models/saturn.glb');
+  const model = useLoader(GLTFLoader, './models/saturn02.glb');
   // model.scene.scale.set(2, 2, 2);
   const { actions } = useAnimations(model.animations, model.scene);
   console.log('Saturn', model);
@@ -15,12 +15,16 @@ const Saturn = () => {
     }
   });
   useEffect(() => {
-    actions?.polySurface26?.play();
+    actions?.move011?.play();
+    actions?.move012?.play();
+    actions?.move013?.play();
+    actions?.move014?.play();
   }, []);
   return (
     <>
-      {/* <ambientLight args={['#ffffff', 0.05]} /> */}
-      <mesh position={[0, -52, 0]}>
+      <ambientLight args={['#ffffff', 0.08]} />
+
+      <mesh position={[4, -62, 0]}>
         <primitive object={model.scene} />
       </mesh>
     </>

@@ -4,9 +4,9 @@ import React, { useState, useEffect } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 const Mailbox = () => {
-  const model = useLoader(GLTFLoader, './models/mailbox-1116.glb');
+  const model = useLoader(GLTFLoader, './models/mailbox.glb');
   const { actions } = useAnimations(model.animations, model.scene);
-  console.log(model);
+  console.log('Mailbox', model);
   model.scene.scale.set(0.8, 0.8, 0.8);
   model.scene.position.set(17, -35, -13);
   model.scene.rotation.set(0, 0, 0);
@@ -16,7 +16,12 @@ const Mailbox = () => {
     }
   });
   useEffect(() => {
-    actions?.move_01?.play();
+    actions?.move011?.play();
+    actions?.move012?.play();
+    actions?.move013?.play();
+    actions?.move021?.play();
+    actions?.move022?.play();
+    actions?.move023?.play();
   }, []);
   return (
     <mesh>

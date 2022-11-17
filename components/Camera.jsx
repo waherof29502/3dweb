@@ -9,7 +9,7 @@ const Camera = () => {
   useFrame((state) => {
     if (!!orbitControlsRef.current) {
       const { x, y } = state.mouse;
-      orbitControlsRef.current.setAzimuthalAngle(-x * angleToRadians(360));
+      orbitControlsRef.current.setAzimuthalAngle(-x * angleToRadians(480));
       orbitControlsRef.current.setPolarAngle(
         (y + 1) * angleToRadians(320 - 30)
       );
@@ -20,13 +20,13 @@ const Camera = () => {
     <>
       {/* camera={{ fov: 75, near: 0.4, far: 50 }} */}
       {/* camera={{ position: [-165, 135, -310], fov: 40 }} */}
-      {/* <PerspectiveCamera makeDefault position={[0, -10, -30]} /> */}
+      <PerspectiveCamera />
       <OrbitControls
         ref={orbitControlsRef}
         minPolarAngle={angleToRadians(40)}
         maxPolarAngle={angleToRadians(89)}
         minDistance={80}
-        maxDistance={140}
+        maxDistance={160}
       />
     </>
   );

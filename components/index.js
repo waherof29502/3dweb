@@ -4,7 +4,8 @@ import MemberModal from './MemberModal';
 import Clock from './Clock';
 
 //Metaverse Scene
-import Lights from './Lights';
+import LightNight from './LightNight';
+import LightDay from './LightDay';
 import Grounds from './Grounds';
 import Camera from './Camera';
 import Background from './Background';
@@ -15,12 +16,14 @@ import Scooter from './Scooter';
 import Saturn from './Saturn';
 import Mailbox from './Mailbox';
 import Cat from './Cat';
+import Kitty from './Kitty';
 import Human from './Human';
 
 export {
   Navbar,
   MemberModal,
-  Lights,
+  LightNight,
+  LightDay,
   Grounds,
   Clock,
   Camera,
@@ -31,4 +34,5 @@ export {
   Cat,
   Human,
   Mailbox,
+  Kitty,
 };

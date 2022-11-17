@@ -1,13 +1,11 @@
 import Head from 'next/head';
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import styles from '../styles/styles';
 import { Canvas } from '@react-three/fiber';
 import { Stats } from '@react-three/drei';
-import { EffectComposer, GodRays } from '@react-three/postprocessing';
 import {
   Navbar,
-  Lights,
+  LightNight,
+  LightDay,
   Grounds,
   Camera,
   Background,
@@ -17,19 +15,20 @@ import {
   Cat,
   Human,
   Mailbox,
+  Kitty,
 } from '../components';
 
 const Home = () => {
   const testing = true;
-  // const [clockState, setClockState] = useState();
-  // console.log('clockState', clockState);
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     const date = new Date();
-  //     setClockState(date?.getHours());
-  // console.log('clock', date);
-  //   }, 10000);
-  // }, []);
+  const [clockState, setClockState] = useState();
+  console.log('clockState', clockState);
+  useEffect(() => {
+    setInterval(() => {
+      const date = new Date();
+      setClockState(date?.getHours());
+      console.log('clock', date);
+    }, 1000);
+  }, []);
 
   return (
     <div className='flex min-h-screen flex-col justify-center'>
@@ -49,16 +48,17 @@ const Home = () => {
               {testing ? <Stats /> : null}
               {testing ? <axesHelper args={[2]} /> : null}
               {testing ? <gridHelper args={[10, 10]} /> : null}
-              <Lights />
-              {/* {clockState < 18 ? <Lights /> : null} */}
-
+              <LightNight />
+              {/* {clockState >= 18 ? <LightNight /> : <LightDay />} */}
+              <Kitty />
               <HouseNight />
+              <Saturn />
               <Saturn />
               <Cat />
               <Mailbox />
 
               {/* <Human /> */}
-              {/* <Scooter /> */}
+              <Scooter />
               <Grounds />
               <Background />
             </Canvas>

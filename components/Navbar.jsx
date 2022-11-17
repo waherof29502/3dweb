@@ -8,7 +8,8 @@ import MemberModal from './MemberModal';
 import Selector from './Selector';
 
 Modal.setAppElement('#__next');
-const customStyles = {
+
+const customModalStyles = {
   content: {
     top: '60%',
     left: '50%',
@@ -27,7 +28,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className='w-full flex py-10 justify-between items-center navbar z-10'>
+    <nav className='w-full flex py-10 justify-between items-center z-10'>
       {/* Logo */}
       <Image
         src={sandpock}
@@ -59,7 +60,7 @@ const Navbar = () => {
 
       <Modal
         isOpen={isOpen}
-        style={customStyles}
+        style={customModalStyles}
         onRequestClose={() => setIsOpen(false)}
       >
         <MemberModal />
@@ -75,17 +76,17 @@ const Navbar = () => {
         <div
           className={`${
             toggle ? 'flex' : 'hidden'
-          } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl`}
+          } p-6 absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl`}
         >
           <ul className='list-none flex flex-col justify-end items-center flex-1'>
-            {navLinks.map((nav, index) => (
+            {navLinks.map((navLink, index) => (
               <li
-                key={nav.id}
+                key={navLink.id}
                 className={`font-poppins font-normal cursor-pointer text-[16px] ${
                   index === navLinks.length - 1 ? 'mr-0' : 'mb-4'
                 } text-white`}
               >
-                <a href={`#${nav.id}`}>{nav.title}</a>
+                <a href={`#${navLink.id}`}>{navLink.title}</a>
               </li>
             ))}
           </ul>

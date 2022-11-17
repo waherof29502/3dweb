@@ -5,7 +5,7 @@ import { angleToRadians } from '../utils/angle';
 import { useControls } from 'leva';
 import { RectAreaLightHelper } from 'three/examples/jsm/helpers/RectAreaLightHelper';
 
-const Lights = () => {
+const LightNight = () => {
   // const DirectionallightRef = useRef();
   // useHelper(lightRef, DirectionalLightHelper, 15, 'red');
 
@@ -43,8 +43,8 @@ const Lights = () => {
         shadow-mapSize-height={100}
         shadow-mapSize-width={100}
       /> */}
-      {/* current light vision */}
 
+      {/* current light vision */}
       <spotLight
         args={['#ff8282', 1.3, 280, angleToRadians(30)]}
         position={[140, 190, 0]}
@@ -56,48 +56,38 @@ const Lights = () => {
         castShadow
       />
 
-      {/* <spotLight
-        // args={['#5776ff', 1.8, 5500,angleToRadians(40), 0.2]}
-        args={['#b450b0', 1.2, 280, angleToRadians(20)]}
-        position={[130, 150, 0]}
-        castShadow
-      /> */}
       {/* outdoors lights */}
       <spotLight
-        args={['#5061ad', 3.8, 2400, angleToRadians(10), 0.2]}
-        position={[-100, 120, 0]}
+        args={['#5061ad', 4, 2800, angleToRadians(10), 0.2]}
+        position={[-100, 150, 0]}
         castShadow
       />
       <spotLight
-        args={['#8ee1ff', 0.13, 3500, angleToRadians(10), 0.2]}
-        position={[0, -200, 0]}
+        args={['#202b2f', 1, 500, angleToRadians(30), 0.5]}
+        position={[0, -400, 0]}
         castShadow
       />
 
       <spotLight
-        args={['#ffa2ad', 1.3, 3500, angleToRadians(10), 0.9]}
-        position={[120, 100, 0]}
+        args={['#b3a2ff', 2.3, 3500, angleToRadians(12), 0.9]}
+        position={[100, 100, 0]}
+        castShadow
+      />
+      <spotLight
+        args={['#653eb8', 1.3, 2500, angleToRadians(12), 0.9]}
+        position={[0, 100, 120]}
         castShadow
       />
       {/* inner building light */}
       <spotLight
-        args={['#f6c776', 0.2, 2800, angleToRadians(10), 1.5]}
+        args={['#eeaa34', 0.2, 2800, angleToRadians(30), 1.5]}
         position={[30, 170, 10]}
         castShadow
       />
-      {/* <spotLight
-        args={['#8b3ed3', 0.2, 1800, angleToRadians(10), 0.5]}
-        position={[30, 20, 10]}
-        castShadow
-      /> */}
-      {/* <spotLight
-        args={['#ffffff', 1.5, 7, 45, 0.4]}
-        position={[300, 300, 300]}
-        castShadow
-      /> */}
-      <hemisphereLight args={['#c01758', '#9035eb', 0.01]} />
+
+      <hemisphereLight args={['#c01758', '#9035eb', 0.034]} />
     </>
   );
 };
 
-export default Lights;
+export default LightNight;
