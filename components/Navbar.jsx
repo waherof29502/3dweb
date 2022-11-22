@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Modal from 'react-modal';
 import MemberModal from './MemberModal';
 import Selector from './Selector';
+import { useRouter } from 'next/router';
 
 Modal.setAppElement('#__next');
 
@@ -27,13 +28,15 @@ const customModalStyles = {
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
   return (
-    <nav className='w-full flex py-10 justify-between items-center z-10'>
+    <nav className='flex flex-1 py-10 justify-between items-center'>
       {/* Logo */}
       <Image
         src={sandpock}
         alt='samoi'
         className='w-[124px] h-[32px] object-contain'
+        onClick={() => router.push('/intro')}
       />
       {/* Desktop Nav Items */}
       <ul className='list-none sm:flex hidden justify-start px-8 items-center flex-1'>

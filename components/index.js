@@ -1,7 +1,6 @@
 //Web Function
 import Navbar from './Navbar';
 import MemberModal from './MemberModal';
-import Clock from './Clock';
 
 //Metaverse Scene
 import LightNight from './LightNight';
@@ -9,6 +8,7 @@ import LightDay from './LightDay';
 import Grounds from './Grounds';
 import Camera from './Camera';
 import Background from './Background';
+import ZoomWithOrbital from './ZoomWithOrbital';
 
 //3D object
 import HouseNight from './HouseNight';
@@ -25,8 +25,8 @@ export {
   LightNight,
   LightDay,
   Grounds,
-  Clock,
   Camera,
+  ZoomWithOrbital,
   Background,
   HouseNight,
   Scooter,

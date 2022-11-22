@@ -2,6 +2,7 @@ import { useLoader } from '@react-three/fiber';
 import React, { useState, useEffect } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useAnimations } from '@react-three/drei';
+import { angleToRadians } from '../utils/angle';
 
 const Scooter = () => {
   const model = useLoader(GLTFLoader, './models/scooter.glb');
@@ -22,7 +23,10 @@ const Scooter = () => {
   }, []);
   return (
     <>
-      <object3D position={[10, -40, 25]}>
+      <object3D
+        position={[-10, -40, 10]}
+        rotation={[0, angleToRadians(210), 0]}
+      >
         <primitive object={model.scene} />
       </object3D>
     </>

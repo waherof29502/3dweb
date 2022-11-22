@@ -9,13 +9,13 @@ const LightDay = () => {
   // const DirectionallightRef = useRef();
   // useHelper(lightRef, DirectionalLightHelper, 15, 'red');
 
-  const spotlightRef = useRef(null);
-  useHelper(spotlightRef, SpotLightHelper, 150, 'red');
-  const { distance, intensity, angle, color } = useControls({
-    distance: { value: 5, min: 500, max: 12000 },
-    intensity: { value: 1, min: 0.1, max: 10 },
-    angle: { value: Math.PI / 6, min: 0.01, max: 1 },
-  });
+  // const spotlightRef = useRef(null);
+  // useHelper(spotlightRef, SpotLightHelper, 150, 'red');
+  // const { distance, intensity, angle, color } = useControls({
+  //   distance: { value: 5, min: 500, max: 12000 },
+  //   intensity: { value: 1, min: 0.1, max: 10 },
+  //   angle: { value: Math.PI / 6, min: 0.01, max: 1 },
+  // });
   // const rectAreaLightRef = useRef(null);
   // useHelper(rectAreaLightRef, RectAreaLightHelper, 'red');
 

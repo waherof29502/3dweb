@@ -2,7 +2,7 @@ import { useTexture } from '@react-three/drei';
 import { angleToRadians } from '../utils/angle';
 
 const Ground = () => {
-  const matcap = useTexture('./matcaps/matcaps9.png');
+  const matcap = useTexture('./matcaps/matcaps10.png');
   return (
     <>
       {/* <mesh rotation-x={Math.PI * -0.5} receiveShadow>
@@ -18,9 +18,14 @@ const Ground = () => {
         <planeGeometry args={[100, 100]} />
         <meshStandardMaterial color='#4a86e0' />
       </mesh> */}
-      <mesh rotation={[-angleToRadians(90), 0, 0]} position={[0, -40, 0]}>
+      <mesh
+        rotation={[-angleToRadians(90), 0, 0]}
+        position={[0, -40, 0]}
+        receiveShadow
+      >
         <planeGeometry args={[500, 500]} />
-        <meshStandardMaterial color='#0f0d16' />
+        {/* <meshStandardMaterial color='#0f0d16' /> */}
+        <shadowMaterial attach='material' color='#0f0d16' opacity={0.8} />
       </mesh>
     </>
   );

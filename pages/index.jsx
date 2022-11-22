@@ -1,13 +1,20 @@
 import Head from 'next/head';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Stats } from '@react-three/drei';
+import { useSpring, a } from 'react-spring';
+import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
+import { angleToRadians } from '../utils/angle';
+import gsap from 'gsap';
+import { useThree } from 'react-three-fiber';
+
 import {
   Navbar,
   LightNight,
   LightDay,
   Grounds,
   Camera,
+  ZoomWithOrbital,
   Background,
   HouseNight,
   Saturn,
@@ -21,13 +28,27 @@ import {
 const Home = () => {
   const testing = true;
   const [clockState, setClockState] = useState();
-  console.log('clockState', clockState);
+  const style1 = useSpring({
+    from: { opacity: 0, marginTop: -100 },
+    to: { opacity: 1, marginTop: 0 },
+  });
+  // console.log('clockState', clockState);
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     const date = new Date();
+  //     setClockState(date?.getHours());
+  //     console.log('clock', date);
+  //   }, 1000);
+  // }, []);
+  const cameraRef = useRef(null);
   useEffect(() => {
-    setInterval(() => {
-      const date = new Date();
-      setClockState(date?.getHours());
-      console.log('clock', date);
-    }, 1000);
+    if (true) {
+      gsap.to(cameraRef.position, {
+        z: true ? 500 : -100,
+        duration: 2,
+        ease: 'power2.out',
+      });
+    }
   }, []);
 
   return (
@@ -39,16 +60,19 @@ const Home = () => {
 
       <main className='bg-gray-900'>
         <div className='h-screen w-full flex flex-col '>
-          <div className='relative justify-center sm:px-16 px-6 z-10'>
+          <a.div style={style1} className='relative sm:px-16 px-6 z-10'>
             <Navbar />
-          </div>
+          </a.div>
           <div className='absolute w-full h-screen'>
-            <Canvas shadows>
-              <Camera />
-              {testing ? <Stats /> : null}
+            <Canvas shadows camera={{ position: [0, 0, 200], fov: 50 }}>
+              {/* <Camera /> */}
+              <ZoomWithOrbital />
+
+              {/* {testing ? <Stats /> : null}
               {testing ? <axesHelper args={[2]} /> : null}
-              {testing ? <gridHelper args={[10, 10]} /> : null}
+              {testing ? <gridHelper args={[10, 10]} /> : null} */}
               <LightNight />
+              {/* <LightDay />
               {/* {clockState >= 18 ? <LightNight /> : <LightDay />} */}
               <Kitty />
               <HouseNight />
@@ -56,7 +80,6 @@ const Home = () => {
               <Saturn />
               <Cat />
               <Mailbox />
-
               {/* <Human /> */}
               <Scooter />
               <Grounds />

@@ -2,10 +2,13 @@ import { useLoader } from '@react-three/fiber';
 import React, { useState, useEffect } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useAnimations } from '@react-three/drei';
+import { angleToRadians } from '../utils/angle';
+import { useSpring, a } from '@react-spring/three';
 
 const HouseNight = () => {
   const model = useLoader(GLTFLoader, './models/house-night.glb');
   const { actions } = useAnimations(model.animations, model.scene);
+  const [click, setClick] = useState(false);
 
   console.log('House', model);
   // model.scene.scale.set(0.35, 0.35, 0.35);
@@ -28,12 +31,26 @@ const HouseNight = () => {
     actions?.banner01?.play();
     actions?.banner02?.play();
     actions?.banner03?.play();
+    actions?.fan01?.play();
+    actions?.fan02?.play();
+    actions?.fan03?.play();
+    actions?.fan04?.play();
+    actions?.fan05?.play();
+    actions?.fan06?.play();
   }, []);
+
+  // Chest open animation
+  // const chestOpen = useSpring({
+  //   rotation: click ? [0, -40, 0] : [0, -180, 0],
+  //   position: click ? [0, -1.5, 0] : [0, 0, 0],
+  // });
   return (
     <>
-      {/* <ambientLight args={['#ffffff33', 0.5]} /> */}
-
-      <object3D position={[0, -40, 0]}>
+      <object3D
+        position={[0, -40, 0]}
+        rotation={[0, angleToRadians(210), 0]}
+        onClick={() => setClick((prev) => !prev)}
+      >
         <primitive object={model.scene} />
       </object3D>
     </>
