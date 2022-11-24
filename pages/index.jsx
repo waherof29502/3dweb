@@ -56,7 +56,7 @@ const Home = () => {
     <div className='flex min-h-screen flex-col justify-center'>
       <Head>
         <title>Samoi</title>
-        <link rel='icon' href='/favicon.ico' />
+        <link rel='icon' href='/sandpock.svg' />
       </Head>
 
       <main className='bg-gray-900'>
