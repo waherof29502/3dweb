@@ -6,5 +6,18 @@ import facebook from './facebook.svg';
 import instagram from './instagram.svg';
 import discord from './discord.svg';
 import sandpock from './sandpock.svg';
+import sound from './sound.svg';
+import mute from './mute.svg';
 
-export { menu, close, google, arrowUp, facebook, instagram, discord, sandpock };
+export {
+  menu,
+  close,
+  google,
+  arrowUp,
+  facebook,
+  instagram,
+  discord,
+  sandpock,
+  sound,
+  mute,
+};

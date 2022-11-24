@@ -10,6 +10,7 @@ import { useThree } from 'react-three-fiber';
 
 import {
   Navbar,
+  Footer,
   LightNight,
   LightDay,
   Grounds,
@@ -59,7 +60,7 @@ const Home = () => {
       </Head>
 
       <main className='bg-gray-900'>
-        <div className='h-screen w-full flex flex-col '>
+        <div className='h-screen w-full flex flex-col justify-between'>
           <a.div style={style1} className='relative sm:px-16 px-6 z-10'>
             <Navbar />
           </a.div>
@@ -80,12 +81,15 @@ const Home = () => {
               <Saturn />
               <Cat />
               <Mailbox />
-              {/* <Human /> */}
+              <Human />
               <Scooter />
               <Grounds />
               <Background />
             </Canvas>
           </div>
+          <footer className='relative sm:px-16 '>
+            <Footer />
+          </footer>
         </div>
       </main>
     </div>

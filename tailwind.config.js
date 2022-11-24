@@ -12,6 +12,7 @@ module.exports = {
       colors: {
         primary: '#5445AE',
         secondary: '#F99148',
+        btnHover: '#342A74',
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],

@@ -1,6 +1,7 @@
 //Web Function
 import Navbar from './Navbar';
 import MemberModal from './MemberModal';
+import Footer from './Footer';
 
 //Metaverse Scene
 import LightNight from './LightNight';
@@ -35,4 +36,5 @@ export {
   Human,
   Mailbox,
   Kitty,
+  Footer,
 };
