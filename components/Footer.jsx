@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { sound, mute, facebook, discord, instagram, twitter } from '../assets';
+import { sound, mute } from '../assets';
 import Image from 'next/image';
 import { BsFacebook } from 'react-icons/bs';
 import { AiFillInstagram } from 'react-icons/ai';
