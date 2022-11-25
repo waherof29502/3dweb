@@ -7,20 +7,32 @@ import { FaDiscord, FaTwitter } from 'react-icons/fa';
 const Footer = () => {
   const [click, setClick] = useState(false);
   return (
-    <nav className='flex flex-1 pb-10 justify-between items-end'>
+    <nav className='flex flex-1 pb-10 justify-between items-end '>
       {/* Left Icon */}
       <Image
         src={click ? sound : mute}
         alt='sound'
-        className='w-[124px] h-[32px] object-contain'
+        className='w-[124px] h-[32px] object-contain sm:ml-0 xs:ml-6 '
         onClick={() => setClick((prev) => !prev)}
       />
       {/* Right Icon */}
-      <div className='flex flex-col '>
-        <BsFacebook className='text-primary my-2 hover:text-btnHover' />
-        <AiFillInstagram className='text-primary my-2 hover:text-btnHover' />
-        <FaDiscord className='text-primary my-2 hover:text-btnHover' />
-        <FaTwitter className='text-primary my-2 hover:text-btnHover' />
+      <div className='flex flex-col sm:mr-0 xs:mr-6'>
+        <BsFacebook
+          size='24'
+          className='text-primary my-2 hover:text-btnHover '
+        />
+        <AiFillInstagram
+          size='24'
+          className='text-primary my-2 hover:text-btnHover'
+        />
+        <FaDiscord
+          size='24'
+          className='text-primary my-2 hover:text-btnHover'
+        />
+        <FaTwitter
+          size='24'
+          className='text-primary my-2 hover:text-btnHover'
+        />
       </div>
     </nav>
   );
