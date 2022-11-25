@@ -6,7 +6,7 @@ import React, { useRef, useEffect } from 'react';
 import { useGLTF, useAnimations } from '@react-three/drei';
 const Human = (props) => {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF('./models/human.glb');
+  const { nodes, materials, animations } = useGLTF('./models/human1124.glb');
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => {
@@ -18,9 +18,9 @@ const Human = (props) => {
         <group name='HankALL' rotation={[Math.PI / 2, 0, 0]} scale={0.01} />
         <group
           name='Armature'
-          rotation={[Math.PI / 2, 0, -0.3]}
+          rotation={[0, 0.4, 0]}
           scale={0.01}
-          position={[31, -39, 27]}
+          position={[30.4, -39, 27]}
         >
           <primitive object={nodes.Root} />
           <skinnedMesh
@@ -95,6 +95,6 @@ const Human = (props) => {
   );
 };
 
-useGLTF.preload('./models/human.glb');
+useGLTF.preload('./models/human1124.glb');
 
 export default Human;

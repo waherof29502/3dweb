@@ -6,7 +6,7 @@ import { angleToRadians } from '../utils/angle';
 import { useSpring, a } from '@react-spring/three';
 
 const HouseNight = () => {
-  const model = useLoader(GLTFLoader, './models/house-night.glb');
+  const model = useLoader(GLTFLoader, './models/house1124.glb');
   const { actions } = useAnimations(model.animations, model.scene);
   const [click, setClick] = useState(false);
 
