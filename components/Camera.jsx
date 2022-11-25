@@ -34,9 +34,9 @@ const Camera = () => {
       <OrbitControls
         ref={orbitControlsRef}
         minPolarAngle={angleToRadians(40)}
-        maxPolarAngle={angleToRadians(89.8)}
+        maxPolarAngle={angleToRadians(95)}
         minDistance={80}
-        maxDistance={160}
+        maxDistance={200}
       />
     </>
   );

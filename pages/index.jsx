@@ -66,8 +66,8 @@ const Home = () => {
           </a.div>
           <div className='absolute w-full h-screen'>
             <Canvas shadows camera={{ position: [0, 0, 200], fov: 50 }}>
-              {/* <Camera /> */}
-              <ZoomWithOrbital />
+              <Camera />
+              {/* <ZoomWithOrbital /> */}
 
               {/* {testing ? <Stats /> : null}
               {testing ? <axesHelper args={[2]} /> : null}

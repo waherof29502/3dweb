@@ -23,10 +23,7 @@ const Scooter = () => {
   }, []);
   return (
     <>
-      <object3D
-        position={[-10, -40, 10]}
-        rotation={[0, angleToRadians(210), 0]}
-      >
+      <object3D position={[10, -40, 15]} rotation={[0, angleToRadians(210), 0]}>
         <primitive object={model.scene} />
       </object3D>
     </>

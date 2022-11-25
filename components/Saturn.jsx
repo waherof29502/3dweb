@@ -5,7 +5,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useSpring } from 'react-spring';
 
 const Saturn = () => {
-  const model = useLoader(GLTFLoader, './models/saturn02.glb');
+  const model = useLoader(GLTFLoader, './models/saturn1124.glb');
   const [click, setClick] = useState(false);
   // model.scene.scale.set(2, 2, 2);
   const { actions } = useAnimations(model.animations, model.scene);

@@ -5,12 +5,12 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { angleToRadians } from '../utils/angle';
 
 const Mailbox = () => {
-  const model = useLoader(GLTFLoader, './models/mailbox.glb');
+  const model = useLoader(GLTFLoader, './models/mailbox1124.glb');
   const { actions } = useAnimations(model.animations, model.scene);
   // console.log('Mailbox', model);
   const [click, setClick] = useState(false);
   model.scene.scale.set(0.8, 0.8, 0.8);
-  model.scene.position.set(17, -35, -13);
+  model.scene.position.set(17, -35, 13);
   model.scene.rotation.set(0, 0, 0);
   model.scene.traverse((object) => {
     if (object.isMesh) {
