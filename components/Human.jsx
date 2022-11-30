@@ -16,6 +16,7 @@ const Human = (props) => {
     <group ref={group} {...props} dispose={null}>
       <group name='Scene'>
         <group name='HankALL' rotation={[Math.PI / 2, 0, 0]} scale={0.01} />
+
         <group
           name='Armature'
           rotation={[0, 0.4, 0]}
@@ -23,12 +24,14 @@ const Human = (props) => {
           position={[30.4, -39, 27]}
         >
           <primitive object={nodes.Root} />
+
           <skinnedMesh
             name='Hank_hair'
             geometry={nodes.Hank_hair.geometry}
             material={materials.hair}
             skeleton={nodes.Hank_hair.skeleton}
           />
+
           <skinnedMesh
             name='Hank_Bracelet'
             geometry={nodes.Hank_Bracelet.geometry}

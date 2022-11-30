@@ -6,11 +6,11 @@ import { angleToRadians } from '../utils/angle';
 import { useSpring, a } from '@react-spring/three';
 
 const HouseNight = () => {
-  const model = useLoader(GLTFLoader, './models/house1124.glb');
+  const model = useLoader(GLTFLoader, './models/house1122.glb');
   const { actions } = useAnimations(model.animations, model.scene);
   const [click, setClick] = useState(false);
 
-  console.log('House', model);
+  // console.log('House', model);
   // model.scene.scale.set(0.35, 0.35, 0.35);
   model.scene.traverse((object) => {
     if (object.isMesh) {

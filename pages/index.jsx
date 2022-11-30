@@ -6,7 +6,6 @@ import { useSpring, a } from 'react-spring';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { angleToRadians } from '../utils/angle';
 import gsap from 'gsap';
-import { useThree } from 'react-three-fiber';
 
 import {
   Navbar,
@@ -29,6 +28,9 @@ import {
 const Home = () => {
   const testing = true;
   const [clockState, setClockState] = useState();
+  const [clicked1, setClicked1] = useState(false);
+  const [clicked2, setClicked2] = useState(false);
+
   const style1 = useSpring({
     from: { opacity: 0, marginTop: -100 },
     to: { opacity: 1, marginTop: 0 },
@@ -41,16 +43,16 @@ const Home = () => {
   //     console.log('clock', date);
   //   }, 1000);
   // }, []);
-  const cameraRef = useRef(null);
-  useEffect(() => {
-    if (true) {
-      gsap.to(cameraRef.position, {
-        z: true ? 500 : -100,
-        duration: 2,
-        ease: 'power2.out',
-      });
-    }
-  }, []);
+  // const cameraRef = useRef(null);
+  // useEffect(() => {
+  //   if (true) {
+  //     gsap.to(cameraRef.position, {
+  //       z: true ? 500 : -100,
+  //       duration: 2,
+  //       ease: 'power2.out',
+  //     });
+  //   }
+  // }, []);
 
   return (
     <div className='flex min-h-screen flex-col justify-center'>
@@ -66,18 +68,17 @@ const Home = () => {
           </a.div>
           <div className='absolute w-full h-screen'>
             <Canvas shadows camera={{ position: [0, 0, 200], fov: 50 }}>
-              <Camera />
               {/* <ZoomWithOrbital /> */}
-
+              <Camera />
+              <LightNight />
+              {/* <ZoomWithOrbital /> */}
               {/* {testing ? <Stats /> : null}
               {testing ? <axesHelper args={[2]} /> : null}
               {testing ? <gridHelper args={[10, 10]} /> : null} */}
-              <LightNight />
               {/* <LightDay />
               {/* {clockState >= 18 ? <LightNight /> : <LightDay />} */}
               <Kitty />
               <HouseNight />
-              <Saturn />
               <Saturn />
               <Cat />
               <Mailbox />

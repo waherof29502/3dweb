@@ -16,16 +16,16 @@ const Camera = () => {
   const camera = useRef();
   useHelper(camera, CameraHelper, 4, 'hotpink');
 
-  // useFrame((state) => {
-  //   if (!!orbitControlsRef.current) {
-  //     const { x, y } = state.mouse;
-  //     orbitControlsRef.current.setAzimuthalAngle(-x * angleToRadians(480));
-  //     orbitControlsRef.current.setPolarAngle(
-  //       (y - 1) * angleToRadians(295 - 18)
-  //     );
-  //     orbitControlsRef.current.update();
-  //   }
-  // });
+  useFrame((state) => {
+    if (!!orbitControlsRef.current) {
+      const { x, y } = state.mouse;
+      orbitControlsRef.current.setAzimuthalAngle(-x * angleToRadians(460));
+      orbitControlsRef.current.setPolarAngle(
+        (y - 1) * angleToRadians(295 - 18)
+      );
+      orbitControlsRef.current.update();
+    }
+  });
   return (
     <>
       {/* camera={{ fov: 75, near: 0.4, far: 50 }} */}
@@ -33,9 +33,9 @@ const Camera = () => {
       {/* <PerspectiveCamera makeDefault fov={[70]} position={[455, 605, -310]} /> */}
       <OrbitControls
         ref={orbitControlsRef}
-        minPolarAngle={angleToRadians(40)}
-        maxPolarAngle={angleToRadians(95)}
-        minDistance={80}
+        minPolarAngle={angleToRadians(65)}
+        maxPolarAngle={angleToRadians(85)}
+        minDistance={130}
         maxDistance={200}
       />
     </>

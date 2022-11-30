@@ -36,7 +36,7 @@ const Navbar = () => {
         src={sandpock}
         alt='samoi'
         className='w-[124px] h-[32px] object-contain'
-        onClick={() => router.push('/intro')}
+        onClick={() => router.push('/')}
       />
       {/* Desktop Nav Items */}
       <ul className='list-none sm:flex hidden justify-start px-8 items-center flex-1'>
@@ -46,8 +46,9 @@ const Navbar = () => {
             className={`font-poppins font-normal cursor-pointer text-[16px] ${
               index === navLinks.length - 1 ? 'mr-0' : 'mr-10'
             } text-white hover:text-secondary`}
+            onClick={() => router.push(`/${nav.id}`)}
           >
-            ◆ <a href={`#${nav.id}`}>{nav.title}</a> ◆
+            ◆ {nav.title} ◆
           </li>
         ))}
       </ul>

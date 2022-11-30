@@ -22,6 +22,7 @@ const Cat = (props) => {
           scale={0.3}
         >
           <primitive object={nodes.Bip_01} />
+
           <skinnedMesh
             name='CAT_01'
             geometry={nodes.CAT_01.geometry}

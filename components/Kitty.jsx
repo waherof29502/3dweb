@@ -8,7 +8,7 @@ const Kitty = () => {
   const model = useLoader(GLTFLoader, './models/kitty02.glb');
   const { actions } = useAnimations(model.animations, model.scene);
 
-  console.log('Kitty', model);
+  // console.log('Kitty', model);
   // model.scene.scale.set(0.35, 0.35, 0.35);
   model.scene.traverse((object) => {
     if (object.isMesh) {
