@@ -3,15 +3,12 @@ import React, { useState, useEffect } from 'react';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { useAnimations } from '@react-three/drei';
 import { angleToRadians } from '../utils/angle';
-import { useSpring, a } from '@react-spring/three';
 
 const HouseNight = () => {
   const model = useLoader(GLTFLoader, './models/house1122.glb');
   const { actions } = useAnimations(model.animations, model.scene);
   const [click, setClick] = useState(false);
 
-  // console.log('House', model);
-  // model.scene.scale.set(0.35, 0.35, 0.35);
   model.scene.traverse((object) => {
     if (object.isMesh) {
       object.castShadow = true;
@@ -39,11 +36,6 @@ const HouseNight = () => {
     actions?.fan06?.play();
   }, []);
 
-  // Chest open animation
-  // const chestOpen = useSpring({
-  //   rotation: click ? [0, -40, 0] : [0, -180, 0],
-  //   position: click ? [0, -1.5, 0] : [0, 0, 0],
-  // });
   return (
     <>
       <object3D

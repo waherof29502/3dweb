@@ -8,8 +8,6 @@ const Scooter = () => {
   const model = useLoader(GLTFLoader, './models/scooter.glb');
   const { actions } = useAnimations(model.animations, model.scene);
 
-  // console.log('Scooter', model);
-  // model.scene.scale.set(0.35, 0.35, 0.35);
   model.scene.traverse((object) => {
     if (object.isMesh) {
       object.castShadow = true;

@@ -29,10 +29,24 @@ const LightDay = () => {
 
   return (
     <>
-      <ambientLight args={['#e7b92f', 0.03]} />
-      <spotLight
-        args={['#fffdf6', 0.8, 1800, angleToRadians(24)]}
-        position={[140, 190, 0]}
+      <ambientLight args={['#404040', 6]} />
+      <rectAreaLight
+        args={['#5478fc', 1.8, 200, 55]}
+        // ref={RectAreaLightRef}
+        position={[80, 0, 100]}
+        rotation-x={-Math.PI / -1.2}
+        rotation-y={-Math.PI / 0.2}
+      />
+      <rectAreaLight
+        args={['#b507af', 1.72, 209, 65]}
+        position={[0, 90, -80]}
+        rotation-x={-Math.PI / 1.2}
+      />
+      <directionalLight
+        position={[-10, 100, 40]}
+        intensity={0.45}
+        shadow-mapSize-height={10}
+        shadow-mapSize-width={10}
         castShadow
       />
     </>

@@ -7,9 +7,7 @@ import { useSpring } from 'react-spring';
 const Saturn = () => {
   const model = useLoader(GLTFLoader, './models/saturn1124.glb');
   const [click, setClick] = useState(false);
-  // model.scene.scale.set(2, 2, 2);
   const { actions } = useAnimations(model.animations, model.scene);
-  // console.log('Saturn', model);
 
   model.scene.traverse((object) => {
     if (object.isMesh) {

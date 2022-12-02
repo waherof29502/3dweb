@@ -71,11 +71,10 @@ const Home = () => {
               {/* <ZoomWithOrbital /> */}
               <Camera />
               <LightNight />
-              {/* <ZoomWithOrbital /> */}
               {/* {testing ? <Stats /> : null}
               {testing ? <axesHelper args={[2]} /> : null}
               {testing ? <gridHelper args={[10, 10]} /> : null} */}
-              {/* <LightDay />
+              {/* <LightDay /> */}
               {/* {clockState >= 18 ? <LightNight /> : <LightDay />} */}
               <Kitty />
               <HouseNight />

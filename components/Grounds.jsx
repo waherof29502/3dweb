@@ -3,7 +3,6 @@ import { useLoader } from '@react-three/fiber';
 import { MeshReflectorMaterial } from '@react-three/drei';
 import { LinearEncoding, RepeatWrapping, TextureLoader } from 'three';
 const Ground = () => {
-  // const matcap = useTexture('./matcaps/matcaps10.png');
   const [roughness, normal] = useLoader(TextureLoader, [
     './textures/terrain-roughness.jpg',
     './textures/terrain-normal.jpg',
@@ -32,12 +31,12 @@ const Ground = () => {
         <MeshReflectorMaterial
           envMapIntensity={0}
           normalMap={normal}
-          normalScale={[0.15, 0.15]}
+          // normalScale={[0.15, 0.15]}
           roughnessMap={roughness}
           dithering={true}
-          color={[0.017, 0.017, 0.017]}
-          roughness={0.7}
-          blur={[1000, 500]} // Blur ground reflections (width, heigt), 0 skips blur
+          color={[0.0017, 0.0017, 0.0017]}
+          roughness={0}
+          blur={[1000, 500]} // Blur ground reflections (width, height), 0 skips blur
           mixBlur={30} // How much blur mixes with surface roughness (default = 1)
           mixStrength={150} // Strength of the reflections
           mixContrast={1} // Contrast of the reflections

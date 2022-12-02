@@ -7,7 +7,7 @@ import { RectAreaLightHelper } from 'three/examples/jsm/helpers/RectAreaLightHel
 
 const LightNight = () => {
   const DirectionalLightRef = useRef(null);
-  useHelper(DirectionalLightRef, DirectionalLightHelper, 15, 'red');
+  // useHelper(DirectionalLightRef, DirectionalLightHelper, 15, 'red');
 
   // const spotlightRef = useRef(null);
   // useHelper(spotlightRef, SpotLightHelper, 150, 'red');
@@ -16,14 +16,14 @@ const LightNight = () => {
   //   intensity: { value: 1, min: 0.1, max: 10 },
   //   angle: { value: Math.PI / 6, min: 0.01, max: 1 },
   // });
-  const RectAreaLightRef = useRef(null);
-  useHelper(RectAreaLightRef, RectAreaLightHelper);
-  const { intensity, width, height, color } = useControls({
-    intensity: { value: 1, min: 0, max: 20 },
-    width: { value: 50, min: 20, max: 300 },
-    height: { value: 50, min: 20, max: 500 },
-    color: '#fff',
-  });
+  // const RectAreaLightRef = useRef(null);
+  // useHelper(RectAreaLightRef, RectAreaLightHelper);
+  // const { intensity, width, height, color } = useControls({
+  //   intensity: { value: 1, min: 0, max: 20 },
+  //   width: { value: 50, min: 20, max: 300 },
+  //   height: { value: 50, min: 20, max: 500 },
+  //   color: '#fff',
+  // });
 
   // const { intensity, width, height, color } = useControls({
   //   intensity: { value: 1, min: 1, max: 120 },
@@ -35,7 +35,7 @@ const LightNight = () => {
 
   return (
     <>
-      <ambientLight args={['#404040', 2]} />
+      <ambientLight args={['#404040', 0.8]} />
       <rectAreaLight
         args={['#5478fc', 1.8, 200, 55]}
         // ref={RectAreaLightRef}
@@ -52,19 +52,19 @@ const LightNight = () => {
       {/* test light */}
       <directionalLight
         position={[-10, 100, 40]}
-        ref={DirectionalLightRef}
+        // ref={DirectionalLightRef}
         intensity={0.45}
         shadow-mapSize-height={10}
         shadow-mapSize-width={10}
         castShadow
       />
       {/* current light vision */}
-      {/* <spotLight
-        args={['#ff8282', 0.3, 280, angleToRadians(30)]}
+      <spotLight
+        args={['#ff8282', 6, 280, angleToRadians(130)]}
         position={[140, 190, 0]}
       />
       <spotLight
-        args={['#5e7ff7', 0.4, 280, angleToRadians(30)]}
+        args={['#5e7ff7', 4, 280, angleToRadians(130)]}
         position={[152, 150, 0]}
       />
       {/* outdoors lights */}
