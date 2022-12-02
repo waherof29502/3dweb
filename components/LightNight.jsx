@@ -35,7 +35,7 @@ const LightNight = () => {
 
   return (
     <>
-      <ambientLight args={['#404040', 0.8]} />
+      <ambientLight args={['#404040', 1.8]} />
       <rectAreaLight
         args={['#5478fc', 1.8, 200, 55]}
         // ref={RectAreaLightRef}
@@ -60,11 +60,11 @@ const LightNight = () => {
       />
       {/* current light vision */}
       <spotLight
-        args={['#ff8282', 6, 280, angleToRadians(130)]}
+        args={['#ff8282', 3, 280, angleToRadians(130)]}
         position={[140, 190, 0]}
       />
       <spotLight
-        args={['#5e7ff7', 4, 280, angleToRadians(130)]}
+        args={['#5e7ff7', 2, 280, angleToRadians(130)]}
         position={[152, 150, 0]}
       />
       {/* outdoors lights */}
